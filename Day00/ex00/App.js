@@ -1,194 +1,118 @@
 import { StatusBar } from 'expo-status-bar';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { StyleSheet, Text, View , Image , TextInput , ScrollView, Button } from 'react-native';
 import React from 'react';
-import { StyleSheet, Text, View,Image,Button,TextInput,ScrollView,ImageBackground } from 'react-native';
-
-
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.PremierBlockGris}>
-      <Image  style={styles.LaBasket} source={require('./assets/imagebasket.png')}/>
-    </View>
-
-      
-      <View style={styles.BlockBlancENdessous}>
-        
-        <Text style={styles.Marques}>Adidas</Text>
-        <Text style={styles.Réferencemarques}>Yeezy Boost 350 V2 Black Red</Text>
-        
-        <View style={styles.LeBlockMesDeuxBoutons}>
-        <Text style={styles.BoutonTaillesetPrix}>
-          <Text>42</Text>
-          <Text>340$</Text>
-          </Text>
-        <Text style={styles.BoutonsAchats}>
-        <Text>BUY</Text>
-        </Text>
-      
-       </View>
-      
-      
-      
-      
-      
-      
-       <View style={styles.BloquedeTexte}>
-         
-         The<strong>Yeezy 350 Boost V2 Bred</strong>
-         stands out for its sobriety and simplicity.Unike most V2
-         shoes that feature a patterned print,this shoe has a monochrome
-         black upper with red stitching.Yeezy has a monochrome
-         black upper with
-         <strong>red stitching</strong>
-         that reads SPLY-350.The silhouette is set
-         on a black boost sale semi-translucent.
-         </View>
-
-           <View>
-             <Text style={styles.PremierLigneFin}>SKU:CP9652</Text>
-             <Text style={styles.SecondeLigneFin}>Release date:February 2017</Text>
-             <Text style={styles.troisiemeLigneFin}>Colorway:CORE BLACK/CORE BLACK/RED</Text>
-          </View>
-
-
-       </View>
-      
+      <View style={styles.onTop}>
+      <Image style={{width:400, height: 220} }source={ require('./assets/basketo.png')}
+     />
+      </View>
       <StatusBar style="auto" />
-      
+      <View style={styles.btn}>
+        <Text style={styles.adidas}>Adidas</Text>
+        <Text style={styles.h2}>Yeezy Boost 350 V2 Black Red</Text>
+
+        <View style={styles.Button}>
+          <Text style={styles.LeftButton}>42                 340€</Text>
+          <Text style={styles.RightButton}><Icon name="shopping-cart" size={30} color="white" />   BUY</Text>
+        </View> 
+
+        <Text style={styles.texte}>The <Text style={styles.change}>Yeezy 350 Boost V2 Bred</Text> stand out for its and simplicity. Unlike most V2 shoes 
+          that feature a patterned print, this shoes has a monochrome black upper
+          with red stitching. yeezy has a monochrome black upper with <Text style={styles.change}>red stitching</Text> that read 
+          SPLY-350. The silhouette is set on a black boost sole semi-translucent.
+        </Text>
+
+        <View >
+          <Text style={styles.changes}>SKU:CP9652</Text>
+          <Text style={styles.changes}>Realase date: February 2017</Text>
+          <Text style={styles.changes}>Colorway: CORE BLACK/CORE BLACK/RED</Text>
+        </View>
+      </View>
     </View>
+    
   );
 }
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#D3D1CB',
+    position:'relative',
+    height:'100%',
+    flex:1,
   },
 
-  PremierBlockGris:
-        {
-        display:'flex',
-        alignItems:'center',
-        justifyContent:'center',
-        width:'400',
-        height:'400',
-        backgroundColor:'grey',
-        paddingRight:'0.5rem',
-         margin:'0.5rem'},
-  
-  LaBasket:
-        {width:'420px',
-        height:'235px'},
-  
-  BlockBlancENdessous:
-  {position:'relative'
-  ,display:'flex',
-  justifyContent:'center',
-  width:'400',
-  height:'600',
-  backgroundColor:'white',
-  borderTopLeftRadius:'20',
-  borderTopRightRadius:'20',
-  padding:'20',
-  marginTop:'-35',
-  border:'1 solide red',
- },
-  
-  Marques:
-  {position:'relative',
-  display:'flex',
-  justifyContent:'center',
-  width:'400',
-  height:'500',
-  backgroundColor:'grey',
-  paddingTop:'100',
-  paddingRight:'25'},
-
-  Réferencemarques:
-  {position:'relative',
-  display:'flex',
-  justifyContent:'center',
-  width:'400',
-  height:'500',
-  backgroundColor:'',
-  paddingTop:'100',
-  paddingRight:'25'},
-
-  LeBlockMesDeuxBoutons:
-  {
-  display:'flex',
-  flexDirection:'row',
-  justifyContent:'space-between'
+  btn: {
+    backgroundColor: '#ffffff',
+    height:'70%',
+    borderRadius: 30,
+    padding:20
+  },
+  onTop:{
+    height:'30%',
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  adidas : {
+    color:'#D3D1CB',
+    fontWeight: 'bold',
+    fontSize:17,
+  },
+  h2:{
+    fontWeight: 'bold',
+    fontSize: 18
+  },
+  Button:{
+    flexDirection:'row',
+    marginLeft: -5
+  },
+  LeftButton:{
+    borderColor: '#D3D1CB',
+    borderWidth : 2,
+    height:60,
+    width:170,
+    borderStyle : 'solid',
+    borderRadius: 20,
+    padding:15,
+    paddingLeft:15,
+    marginTop:15
+  },
+  RightButton:{
+    backgroundColor: 'black',
+    borderWidth : 2,
+    height:60,
+    width:170,
+    borderStyle : 'solid',
+    borderRadius: 20,
+    color: 'white',
+    textAlign: 'center',
+    marginLeft: 30,
+    fontSize:25,
+    padding:12,
+    paddingLeft:15,
+    marginTop:15,
+  },
+  texte:{
+    fontWeight:'normal',
+    padding:10,
+    marginTop:20,
+    fontSize:17
+  },
+ 
+  change:{
+    fontWeight:'bold'
+  },
+  changes:{
+    fontWeight:'bold',
+    marginTop:5
   },
 
-  BoutonTaillesetPrix:
-  {
-  display:'flex',
-  justifyContent:'space-between',
-  width:'160',
-  fontsize:'15',
-  backgroundColor:'red',
-  padding:'0.5rem',
-  border:'3 solid red',
-  paddingTop:'12',
-  paddingBottom:'12',
-  BorderRadius:'5'},
-
-  BoutonsAchats:
-  {
-  display:'flex',
-  justifyContent:'center',
-  width:'160',
-  padding:'20',
-  fontSize:'15',
-  border:'2px solid black',
-  backgroundColor:'black',
-  paddingTop:'12',
-  paddingBottom:'12',
-  borderRadius:'5',
-color:'white',},
-
-  BloquedeTexte:
-  {fontsize:'20',
-  display:'flex',
-  flexDirection:'row',
-  paddingTop:'20',
-  paddingBottom:'60',
-  },
-
-  PremierLigneFin:
-  {fontsize:'20',
-  fontWheigt:'700',
-  color:'black',
-  paddingTop:'7',
-  paddingRight:'7'},
-
-  SecondeLigneFin:
-  {fontsize:'20',
-  fontWheigt:'700',
-  color:'black',
-  paddingTop:'7',
-  paddingRight:'7'},
-
-  troisiemeLigneFin:
-  {fontsize:'20',
-  fontWheigt:'700',
-  color:'black',
-  paddingTop:'7',
-  paddingRight:'7'},
-
-
-
+  
 });
-//je cree mon dossier avec git clone KE_PISCINERN
-//je me place dessus et je CREER MON DOSSIER DAY00 DANS MON DOSSIER INITIAL
-//ensuite je fais un npm install expo-cli --global
-//ensuite un expo init ex00 SA CREERA LE FICHIER ex00 dans Day00(utiliser uniquement sur  le git bash)
-//ensuite je me place sur ex00 et  je fais LE expo start (ou npm start si sa fonctionne pas) qui me creera les modules 
-// a l'interieur du fichier ex00
-//se mettre en blank template et managed default
 
+//commande terminal a utiliser 
+
+//C:\Users\karim\Downloads\DAY08\Day00\ex00> npm start
